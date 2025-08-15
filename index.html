@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tanmay Tambi - Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="public/assets/documents/favicon.ico" type="image/x-icon" />
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
@@ -15,16 +15,19 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <h2>Tanmay Tambi</h2>
+        <div class="logo-circle">TT</div>
       </div>
 
       <div class="nav-menu" id="nav-menu">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#achievements" class="nav-link">Achievements</a>
         <a href="#resume" class="nav-link">Resume</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <button class="contact-btn" onclick="scrollToSection('contact')">Contact me</button>
       </div>
 
       <div class="nav-toggle" id="nav-toggle">
@@ -37,41 +40,113 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <div class="hero-avatar" style="margin-bottom: 2rem;">
-        <div class="avatar-circle" style="width: 160px; height: 160px; overflow: hidden; border-radius: 50%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); animation: pulse 2s infinite;">
-          <img src="public/assets/images/tanmay.png" alt="Tanmay Tambi" style="width: 100%; height: 100%; object-fit: cover;" />
+    <div class="hero-container">
+      <div class="hero-left">
+        <div class="greeting">
+          <span class="wave-icon">👋</span>
+          <span class="greeting-text">Hello !</span>
+        </div>
+        <h1 class="hero-title">
+          I'm <span class="name-highlight">Tanmay Tambi,</span><br>
+          <span class="profession">Aspiring Entrepreneur &</span><br>
+          <span class="profession">Student Leader</span>
+        </h1>
+        <p class="hero-description">
+          16-year-old student at DPS Bangalore North passionate about entrepreneurship, 
+          business innovation, and creating impactful solutions.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="downloadResume()">
+            <i data-lucide="download"></i>
+            Hire Me
+          </button>
+          <button class="btn-secondary" onclick="openWhatsApp()">
+            <i data-lucide="message-circle"></i>
+            WhatsApp
+          </button>
         </div>
       </div>
-      <h1 class="hero-title">Tanmay Tambi</h1>
-      <p class="hero-subtitle">Aspiring Entrepreneur | IPMAT Aspirant | Student at DPS Bangalore North</p>
-      <button class="hero-btn" onclick="scrollToSection('about')">
-        <span>Discover My Journey</span>
-        <i data-lucide="chevron-down"></i>
-      </button>
+      
+      <div class="hero-right">
+        <div class="hero-image-container">
+          <div class="floating-tag tag-1">IPMAT Aspirant</div>
+          <div class="floating-tag tag-2">Entrepreneur</div>
+          <div class="floating-tag tag-3">Student Leader</div>
+          <img src="public/assets/images/tanmay.png" alt="Tanmay Tambi" class="hero-image" />
+          <div class="hero-bg-shape"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="services-banner">
+      <div class="service-item">
+        <i data-lucide="briefcase"></i>
+        <span>Business Strategy</span>
+      </div>
+      <div class="service-item">
+        <i data-lucide="users"></i>
+        <span>Leadership</span>
+      </div>
+      <div class="service-item">
+        <i data-lucide="lightbulb"></i>
+        <span>Innovation</span>
+      </div>
+      <div class="service-item">
+        <i data-lucide="target"></i>
+        <span>Project Management</span>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>
-          Hey! I'm Tanmay, a 16-year-old student at DPS Bangalore North with a passion for
-          entrepreneurship. My internship at Emertxe Information Technologies PvLtd in 2023
-          sparked my interest in business, and I'm eager to learn more.
-        </p>
-        <p>
-          When I'm not studying, you'll find me on the badminton court. I'm excited to explore
-          commerce and entrepreneurship in 11th grade and connect with like-minded individuals
-          who share my passion for innovation and business.
-        </p>
-        <p>
-          My journey includes winning Shark Tank competitions, organizing school events,
-          completing courses certified by Brown University, and gaining hands-on experience
-          through various internships and entrepreneurial ventures.
-        </p>
+      <div class="about-container">
+        <div class="about-left">
+          <div class="about-image-wrapper">
+            <img src="public/assets/images/tanmay.png" alt="Tanmay Tambi" class="about-image" />
+            <div class="experience-card">
+              <div class="exp-number">2+</div>
+              <div class="exp-text">Years of Experience</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-right">
+          <div class="section-header">
+            <span class="section-subtitle">— About Me</span>
+            <h2 class="section-title">Who is Tanmay Tambi?</h2>
+          </div>
+          <p class="about-description">
+            Tanmay Tambi is a 16-year-old visionary student at DPS Bangalore North, passionate about 
+            entrepreneurship and business innovation. With hands-on experience from internships and 
+            a track record of winning competitions, Tanmay is building the foundation for a future 
+            in commerce and entrepreneurship.
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3+</div>
+              <div class="stat-label">Competitions Won</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">2+</div>
+              <div class="stat-label">Years of Experience</div>
+            </div>
+          </div>
+          
+          <button class="download-cv-btn" onclick="downloadResume()">
+            <i data-lucide="download"></i>
+            Download CV
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -79,9 +154,18 @@
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="container">
-      <h2 class="section-title">Projects & Experience</h2>
+      <div class="section-header text-center">
+        <span class="section-subtitle">— Services</span>
+        <h2 class="section-title">Services I Provide</h2>
+      </div>
       <div class="projects-grid" id="projects-grid">
         <!-- Projects will be loaded by JavaScript -->
+      </div>
+      <div class="text-center">
+        <button class="see-more-btn">
+          <span>See More</span>
+          <i data-lucide="arrow-right"></i>
+        </button>
       </div>
     </div>
   </section>
