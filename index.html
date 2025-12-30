@@ -1,181 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tanmay Tambi - Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tanmay Tambi | Portfolio</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://unpkg.com/lucide@latest"></script>
+   <style>
+       html { scroll-behavior: smooth; }
+       @keyframes fade-in {
+           from { opacity: 0; transform: translateY(30px); }
+           to { opacity: 1; transform: translateY(0); }
+       }
+       .animate-fade-in { animation: fade-in 1s ease-out; }
+       .nav-glass { background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+   </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-blue-50 to-white min-h-screen text-gray-800">
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <h2>Tanmay Tambi</h2>
-      </div>
+   <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+           <div class="text-2xl font-bold text-blue-600">Tanmay Tambi</div>
+           <div class="hidden md:flex space-x-8">
+               <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+               <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition">About</a>
+               <a href="#projects" class="text-gray-700 hover:text-blue-600 font-medium transition">Experience</a>
+               <a href="#achievements" class="text-gray-700 hover:text-blue-600 font-medium transition">Achievements</a>
+               <a href="#resume" class="text-gray-700 hover:text-blue-600 font-medium transition">Resume</a>
+               <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact</a>
+           </div>
+           <button id="menu-toggle" class="md:hidden text-gray-700">
+               <i data-lucide="menu"></i>
+           </button>
+       </div>
+       <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-xl">
+           <a href="#home" class="mobile-link block px-4 py-3 border-b">Home</a>
+           <a href="#about" class="mobile-link block px-4 py-3 border-b">About</a>
+           <a href="#projects" class="mobile-link block px-4 py-3 border-b">Experience</a>
+           <a href="#achievements" class="mobile-link block px-4 py-3 border-b">Achievements</a>
+           <a href="#resume" class="mobile-link block px-4 py-3 border-b">Resume</a>
+           <a href="#contact" class="mobile-link block px-4 py-3">Contact</a>
+       </div>
+   </nav>
 
-      <div class="nav-menu" id="nav-menu">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#achievements" class="nav-link">Achievements</a>
-        <a href="#resume" class="nav-link">Resume</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-
-      <div class="nav-toggle" id="nav-toggle">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <div class="hero-avatar" style="margin-bottom: 2rem;">
-        <div class="avatar-circle" style="width: 160px; height: 160px; overflow: hidden; border-radius: 50%; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); animation: pulse 2s infinite;">
-          <img src="public/assets/images/tanmay.png" alt="Tanmay Tambi" style="width: 100%; height: 100%; object-fit: cover;" />
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+    <div class="text-center z-10 px-4">
+        <div class="w-44 h-44 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 shadow-2xl transition-transform hover:scale-105 duration-300">
+            <div class="w-full h-full rounded-full bg-gray-200 overflow-hidden border-4 border-white">
+                <img 
+                    src="https://i.ibb.co/Jj4Kz8Gb/ESL7066-Edited.jpg" 
+                    alt="Tanmay Tambi" 
+                    class="w-full h-full object-cover object-center"
+                >
+            </div>
         </div>
-      </div>
-      <h1 class="hero-title">Tanmay Tambi</h1>
-      <p class="hero-subtitle">Aspiring Entrepreneur | IPMAT Aspirant | Student at DPS Bangalore North</p>
-      <button class="hero-btn" onclick="scrollToSection('about')">
-        <span>Discover My Journey</span>
-        <i data-lucide="chevron-down"></i>
-      </button>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>
-          Hey! I'm Tanmay, a 16-year-old student at DPS Bangalore North with a passion for
-          entrepreneurship. My internship at Emertxe Information Technologies PvLtd in 2023
-          sparked my interest in business, and I'm eager to learn more.
+        
+        <h1 class="text-5xl md:text-7xl font-bold text-gray-800 mb-4 animate-fade-in">Tanmay Tambi</h1>
+        <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            17 y/o Commerce Student & IPMAT 2026 Aspirant | Intern at Emertxe and YogiFi | Aspiring Entrepreneur
         </p>
-        <p>
-          When I'm not studying, you'll find me on the badminton court. I'm excited to explore
-          commerce and entrepreneurship in 11th grade and connect with like-minded individuals
-          who share my passion for innovation and business.
-        </p>
-        <p>
-          My journey includes winning Shark Tank competitions, organizing school events,
-          completing courses certified by Brown University, and gaining hands-on experience
-          through various internships and entrepreneurial ventures.
-        </p>
-      </div>
+        <a href="#about" class="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg">
+            Discover My Journey <i data-lucide="chevron-down" class="ml-2 w-5 h-5 animate-bounce"></i>
+        </a>
     </div>
-  </section>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2 class="section-title">Projects & Experience</h2>
-      <div class="projects-grid" id="projects-grid">
-        <!-- Projects will be loaded by JavaScript -->
-      </div>
-    </div>
-  </section>
+   <section id="about" class="py-20 px-4">
+       <div class="max-w-4xl mx-auto">
+           <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 italic">About Me</h2>
+           <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+               <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                   Hi, I’m Tanmay Tambi, a 17-year-old student driven by entrepreneurship, AI, and execution. I started my journey during the COVID lockdown by building a virtual event venture, which sparked my interest in turning ideas into action.
 
-  <!-- Achievements Section -->
-  <section id="achievements" class="achievements">
-    <div class="container">
-      <h2 class="section-title">Key Achievements</h2>
-      <div class="achievements-list" id="achievements-list">
-        <!-- Achievements will be loaded by JavaScript -->
-      </div>
-    </div>
-  </section>
+                   Since then, I’ve worked across growth marketing, strategy, and operations through internships at Emertxe, YogiFi, and Scholastic, where I executed digital campaigns, hyperlocal activations, and large-scale events. I actively engage in startup networking events and founder-led conferences, learning directly from builders in the ecosystem.
 
-  <!-- Resume Section -->
-  <section id="resume" class="resume">
-    <div class="container">
-      <h2 class="section-title">Resume</h2>
-      <p class="resume-text">
-        Download my complete resume to learn more about my experience and skills.
-      </p>
-      <div class="resume-buttons">
-        <button class="btn btn-primary" onclick="downloadResume()">
-          <i data-lucide="download"></i>
-          <span>Download Resume</span>
-        </button>
-        <button class="btn btn-secondary" onclick="viewResume()">
-          <i data-lucide="external-link"></i>
-          <span>View Resume</span>
-        </button>
-      </div>
-    </div>
-  </section>
+                   I’m currently preparing for the IPMAT. Outside academics, I enjoy badminton, graphic design, and organizing entrepreneurial school events, including Shark Tank–style competitions.
+               </p>
+               
+               </p>
+           </div>
+       </div>
+   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p>
-            I'm always open to discussing new opportunities, collaborations, 
-            or just having a conversation about entrepreneurship and innovation.
-          </p>
-          <div class="contact-links">
-            <a href="tel:+918296807190" class="contact-link">
-              <i data-lucide="phone"></i>
-              <span>+91 8296807190</span>
-            </a>
-            <a href="mailto:tanmaytambiji@gmail.com" class="contact-link">
-              <i data-lucide="mail"></i>
-              <span>tanmaytambiji@gmail.com</span>
-            </a>
-            <a href="https://www.linkedin.com/in/tanmay-tambi" target="_blank" class="contact-link">
-              <i data-lucide="linkedin"></i>
-              <span>LinkedIn Profile</span>
-            </a>
-            <a href="https://instagram.com/tanmay_tambi" target="_blank" class="contact-link">
-              <i data-lucide="instagram"></i>
-              <span>@tanmay_tambi</span>
-            </a>
-          </div>
+   <section id="projects" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 italic">Experience & Impact</h2>
+
+        <div class="mb-16 bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl shadow-2xl p-8 text-white relative overflow-hidden group">
+            <div class="absolute -right-10 -top-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+            <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="max-w-2xl">
+                    <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-white/30 mb-4 inline-block">Flagship Social Enterprise</span>
+                    <h3 class="text-3xl font-bold mb-4 italic italic">Binge Healthy</h3>
+                    <p class="text-blue-50 text-lg leading-relaxed mb-6">Co-led a high-growth social enterprise initiative. I managed the end-to-end supply chain, marketing, and on-ground sales operations, resulting in a record-breaking single-day revenue for our school program.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-xs">#RevenueGrowth</span>
+                        <span class="px-3 py-1 bg-white/10 rounded-full text-xs">#SupplyChain</span>
+                    </div>
+                </div>
+                <div class="bg-white text-blue-900 p-6 rounded-2xl text-center min-w-[180px] shadow-xl transform group-hover:scale-105 transition-all">
+                    <p class="text-xs font-bold uppercase text-blue-600 mb-1">Impact Result</p>
+                    <p class="text-3xl font-black">₹50,000</p>
+                    <p class="text-[10px] text-gray-500 mt-1 uppercase">Single Day Revenue</p>
+                </div>
+            </div>
         </div>
 
-        <div class="contact-form">
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center italic">
+            <i data-lucide="briefcase" class="mr-3 text-blue-600"></i> Professional Internships
+        </h3>
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="bg-white rounded-2xl shadow-md p-6 border-t-4 border-blue-600 hover:shadow-xl transition-all">
+                <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="briefcase"></i></div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2 italic">Internship at Emertxe</h4>
+                <p class="text-gray-600 text-sm mb-4">Led Telegram-based digital marketing initiatives to improve engagement and community interaction for tech-focused audiences.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-bold text-gray-400">
+                    <span class="bg-gray-100 px-2 py-1 rounded uppercase">Content Strategy</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded uppercase">SEO</span>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+            <div class="bg-white rounded-2xl shadow-md p-6 border-t-4 border-blue-600 hover:shadow-xl transition-all">
+                <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="code"></i></div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2 italic">Internship at YogiFi</h4>
+                <p class="text-gray-600 text-sm mb-4">Increased brand visibility by launching a hyperlocal marketing campaign targeting tea stalls, bridging traditional habits with wellness tech.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-bold text-gray-400">
+                    <span class="bg-gray-100 px-2 py-1 rounded uppercase">Marketing Strategy</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded uppercase">Hyperlocal Campaigns</span>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
+
+            <div class="bg-white rounded-2xl shadow-md p-6 border-t-4 border-blue-600 hover:shadow-xl transition-all">
+                <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4"><i data-lucide="file-text"></i></div>
+                <h4 class="text-xl font-bold text-gray-800 mb-2 italic">Internship at Scholastic</h4>
+                <p class="text-gray-600 text-sm mb-4">Promoted the Scholastic Book Fair by managing marketing campaigns, on-ground execution, and overall event coordination.</p>
+                <div class="flex flex-wrap gap-2 text-[10px] font-bold text-gray-400">
+                    <span class="bg-gray-100 px-2 py-1 rounded uppercase">Event Management</span>
+                    <span class="bg-gray-100 px-2 py-1 rounded uppercase">Promotions</span>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Tanmay Tambi. All rights reserved.</p>
-      <p>Built with HTML, CSS & JavaScript</p>
+        <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center italic">
+            <i data-lucide="award" class="mr-3 text-purple-600"></i> Startup Conferences & Leadership Exposure
+        </h3>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex gap-4">
+                <div class="text-purple-600"><i data-lucide="trophy" class="w-8 h-8"></i></div>
+                <div>
+                    <h4 class="font-bold text-gray-800 italic">TechSparks 2024</h4>
+                    <p class="text-sm text-gray-600">
+                    Volunteered at <b>India’s leading startup conference</b>. Personally interacted with <b>Nithin Kamath (Zerodha)</b> and <b>Bhavish Aggarwal (Ola)</b> to understand the <b>mechanics of scaling billion-dollar ventures</b>.
+</p>
+                    <div class="mt-3 flex gap-2 text-[10px] font-bold text-purple-400 uppercase">
+                        <span>#FounderInteractions</span><span>#StartupEcosystem</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex gap-4">
+                <div class="text-purple-600"><i data-lucide="users" class="w-8 h-8"></i></div>
+                <div>
+                    <h4 class="font-bold text-gray-800 italic">Event Management Firm</h4>
+                    <p class="text-sm text-gray-600">Founded and managed a virtual event management venture during the lockdown, organizing digital events for diverse audiences.</p>
+                    <div class="mt-3 flex gap-2 text-[10px] font-bold text-purple-400 uppercase">
+                        <span>#Leadership</span><span>#Operations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
+   </section>
 
-  <script src="js/script.js"></script>
+   <section id="achievements" class="py-24 px-4 bg-gradient-to-r from-blue-600/5 to-purple-600/5 relative overflow-hidden">
+    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto relative z-10">
+        <h2 class="text-4xl font-bold text-center text-gray-800 mb-16 italic">Key Achievements</h2>
+        
+        <div class="grid gap-6">
+            <div class="flex items-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-6 border border-blue-100 hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-6 shadow-lg shadow-blue-200">
+                    <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                </div>
+                <p class="text-xl italic font-medium text-gray-700">Shark Tank Winner at DPS South – Business pitch winner</p>
+            </div>
+
+            <div class="flex items-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-6 border border-purple-100 hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-6 shadow-lg shadow-purple-200">
+                    <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                </div>
+                <p class="text-xl italic font-medium text-gray-700">First-ever Shark Tank Organizer at DPS North</p>
+            </div>
+
+            <div class="flex items-center bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm p-6 border border-blue-100 hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center mr-6 shadow-lg shadow-blue-200">
+                    <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
+                </div>
+                <p class="text-xl italic font-medium text-gray-700">Jr. CEO Certificate, Clever Harvey (conceptualised by alumni of Brown University)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="max-w-7xl mx-auto my-16 px-4">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+        
+        <div class="w-full md:w-1/2 max-w-[350px]">
+            <div class="relative pb-[177%] h-0 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black">
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/TaL91wjXVU0" 
+                    title="Nithin Kamath interaction" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <span class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-200">
+                Viral Impact
+            </span>
+            <h3 class="text-4xl md:text-5xl font-bold text-gray-800 mt-6 italic leading-tight">
+                Interaction with <br><span class="text-blue-600">Nithin Kamath</span>
+            </h3>
+            <p class="text-2xl font-bold text-blue-500 mt-4 italic">2.5 Million+ Views</p>
+            
+            <div class="mt-8 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <p class="text-gray-600 italic leading-relaxed">
+                    "Discussing wealth generation and the mechanics of scaling billion-dollar ventures with the Zerodha founder."
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<section id="resume" class="py-24 px-4 bg-white relative">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            
+            <div class="bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 italic">Resume</h2>
+                <p class="text-gray-600 mb-8 text-lg">
+                    A comprehensive overview of my professional experience, academic background, and technical skills.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://drive.google.com/file/d/1S6MoGGzXLq57K-__g1yji1h94EsGUldJ/view?usp=sharing" 
+                       target="_blank" 
+                       class="inline-flex items-center px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-full font-bold hover:bg-blue-50 transition-all shadow-sm">
+                        <i data-lucide="eye" class="mr-2 w-5 h-5"></i> View Resume
+                    </a>
+                    <a href="https://drive.google.com/uc?export=download&id=1S6MoGGzXLq57K-__g1yji1h94EsGUldJ" 
+   class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 hover:scale-105 transition-all shadow-lg">
+    <i data-lucide="download" class="mr-2 w-5 h-5"></i> Download
+</a>
+                    </a>
+                </div>
+            </div>
+
+            <div id="contact" class="p-2">
+                <h2 class="text-4xl font-bold text-gray-800 mb-8 italic">Let's Connect</h2>
+                <div class="space-y-4">
+                    <a href="mailto:tanmaytambiji@gmail.com" class="flex items-center p-4 bg-white rounded-2xl border border-gray-100 hover:border-blue-300 hover:shadow-md transition-all group">
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mr-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">Email Me</p>
+                            <span class="text-lg font-medium text-gray-700">tanmaytambiji@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/tanmay-tambi" target="_blank" class="flex items-center p-4 bg-white rounded-2xl border border-gray-100 hover:border-blue-300 hover:shadow-md transition-all group">
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mr-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i data-lucide="linkedin"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold uppercase tracking-wider">LinkedIn</p>
+                            <span class="text-lg font-medium text-gray-700">Tanmay Tambi</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+   <footer class="bg-gray-800 text-white py-8 text-center">
+       <p>© 2025 Tanmay Tambi. All rights reserved.</p>
+   </footer>
+
+   <script>
+       lucide.createIcons();
+       window.addEventListener('scroll', () => {
+           const nav = document.getElementById('navbar');
+           window.scrollY > 50 ? nav.classList.add('nav-glass') : nav.classList.remove('nav-glass');
+       });
+       const menuToggle = document.getElementById('menu-toggle');
+       const mobileMenu = document.getElementById('mobile-menu');
+       menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+   </script>
 </body>
 </html>
